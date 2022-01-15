@@ -1,0 +1,24 @@
+From f0478415237aa3284fcb1192429866f8d510e364 Mon Sep 17 00:00:00 2001
+From: Beacon Zhang <Beacon1096@outlook.com>
+Date: Sat, 15 Jan 2022 17:46:59 +0800
+Subject: [PATCH] Update command line options
+
+---
+ vdfuse.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/vdfuse.c b/vdfuse.c
+index 753c9ff..31584bd 100644
+--- a/vdfuse.c
++++ b/vdfuse.c
+@@ -243,6 +243,7 @@ int main (int argc, char **argv) {
+       	break;
+       case 'f' : imagefilename =  (char *)optarg; break;
+       case 'd' : foreground = 1; debug = 1;       break;
++      case 'o' : break; //avoid exiting when FUSE calls it with automatically added argument -o
+       case 'h' : usageAndExit(NULL);
+       case '?' : usageAndExit("Unknown option");
+       }
+-- 
+2.34.1
+
